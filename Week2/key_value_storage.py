@@ -29,8 +29,10 @@ def update_json_data(key, value):
 		f.write(json.dumps(data))
 
 def find_json_value(key):
-		json_map = load_json_data()
-		return json_map.get(key)
+	json_map = load_json_data()
+	if(key in json_map):
+		return json_map[key]
+	return []
 
 
 if __name__ == '__main__':
